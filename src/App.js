@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+/*import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -22,4 +22,28 @@ function App() {
   );
 }
 
-export default App;
+export default App;*/
+
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+import './App.css';
+import Home from './pages/Home';
+import Person from './pages/Person';
+
+export default function App() {
+  return (
+    <Router>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/person/:personId" component={Person} />
+          <Route path="/" component={Home} />
+        </Switch>
+      {/*</div>*/}
+    </Router>
+  );
+}
